@@ -1,0 +1,35 @@
+.uppercase {
+	text-transform: uppercase;
+}
+.underline {
+	position: relative !important;
+}
+.underline::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) translateY(0);
+	bottom: 2px; /* Adjust the distance from the text */
+	width: 80%; /* Adjust the width of the underline */
+	height: 1px;
+	background-color: white;
+	opacity: 0.5;
+	transition: opacity 0.45s ease-in, transform 0.3s ease-in 0.2s; /* Add delay to opacity transition */
+}
+
+.underline:hover::after {
+	transform: translateX(-20%);
+	opacity: 0;
+}
+.darken::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for darkness */
+}
+.hidden {
+	display: none !important;
+}

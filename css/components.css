@@ -1,0 +1,240 @@
+:root {
+	--color-process: black; /* Replace with your desired color value */
+}
+
+.btn {
+	position: relative;
+	font-family: "Karla", sans-serif;
+	padding: 5px 10px;
+	background-color: transparent;
+	color: white;
+	cursor: pointer;
+	border: 0;
+}
+
+.btn::before,
+.btn::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 0.5px;
+	background-color: white; /* Set initial background color to transparent */
+	transition: all 0.5s ease; /* Transition background color */
+}
+
+.btn::before {
+	top: 0;
+}
+
+.btn::after {
+	bottom: 0;
+}
+
+.btn:hover::before {
+	transform: translateY(-2px);
+	background-color: transparent;
+}
+.btn:hover::after {
+	transform: translateY(2px);
+	background-color: transparent;
+}
+.divider {
+	width: 100px;
+	height: 1px;
+	background-color: black;
+	opacity: 0.5;
+	margin: auto;
+}
+
+/* ///////////////////////////////////// */
+/* slider  */
+.slider-container {
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	background-color: black;
+}
+
+.slide {
+	flex: 0 0 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: center;
+	display: none;
+}
+
+.slide h4 {
+	margin-top: -4rem;
+	margin-bottom: 1rem;
+	color: white;
+	font-size: 32px;
+}
+.slide p {
+	color: white;
+}
+
+/* Show the first slide by default */
+.slide:first-child {
+	display: block;
+}
+
+/* BUTTON */
+.btn-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 50%;
+	background: none;
+	border: none;
+	z-index: 10;
+}
+
+.previous {
+	left: 5%;
+}
+.next {
+	right: 5%;
+}
+.btn-slider span {
+	color: white;
+}
+
+/* ///////////////////////////////////// */
+.selling-process .progress {
+	position: relative;
+	padding: 0 1rem 0 3.5rem;
+	margin: 2rem 0 0;
+	list-style: none;
+}
+
+.selling-process .progress__item {
+	position: relative;
+	min-height: 85px;
+	counter-increment: list;
+	padding-left: 0.5rem;
+}
+
+.selling-process .progress__item:before {
+	content: "";
+	position: absolute;
+	left: -1.5rem;
+	top: 33px;
+	height: 60%;
+	width: 1px;
+	border-left: 1px solid var(--color-process);
+}
+.selling-process .progress__item:after {
+	content: counter(list);
+	position: absolute;
+	top: 0;
+	left: -2.5rem;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--color-process);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: -3rem;
+	text-align: center;
+	border: 1px solid var(--color-process);
+}
+.selling-process .progress__item:last-child:before {
+	border: none;
+}
+.selling-process .progress__item.progress__item--completed {
+	opacity: 0.6;
+	color: var(--color-process);
+}
+.selling-process .progress__item.progress__item--completed:after {
+	content: "\2713";
+	font-weight: 400;
+	background: var(--color-process);
+	color: white;
+}
+.selling-process .progress__item.progress__item--active:after {
+	background: var(--color-process);
+	color: white;
+}
+
+.selling-process .progress__title {
+	padding: 0;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.selling-process .progress__info {
+	font-size: 13px;
+}
+
+.buying-process .progress {
+	position: relative;
+	padding: 0 3.5rem 0 1rem;
+	margin: 2rem 0 0;
+	list-style: none;
+}
+
+.buying-process .progress__item {
+	position: relative;
+	min-height: 85px;
+	counter-increment: list;
+	padding-right: 0.5rem;
+}
+
+.buying-process .progress__item:before {
+	content: "";
+	position: absolute;
+	right: -1.5rem;
+	top: 33px;
+	height: 60%;
+	width: 1px;
+	border-right: 1px solid var(--color-process);
+}
+
+.buying-process .progress__item:after {
+	content: counter(list);
+	position: absolute;
+	top: 0;
+	right: -2.5rem;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--color-process);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: -3rem;
+	text-align: center;
+	border: 1px solid var(--color-process);
+}
+
+.buying-process .progress__item:last-child:before {
+	border: none;
+}
+
+.buying-process .progress__item.progress__item--completed {
+	opacity: 0.6;
+	color: var(--color-process);
+}
+
+.buying-process .progress__item.progress__item--completed:after {
+	content: "\2713";
+	font-weight: 400;
+	background: var(--color-process);
+	color: white;
+}
+
+.buying-process .progress__item.progress__item--active:after {
+	background: var(--color-process);
+	color: white;
+}
+
+.buying-process .progress__title {
+	padding: 0.4rem 0 0.5rem;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.buying-process .progress__info {
+	font-size: 13px;
+}
